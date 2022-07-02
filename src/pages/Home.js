@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Logo, Avatar } from '../components/index';
 import Speech from 'react-speech';
+
 export default function Home() {
   const user = [
     {
@@ -136,11 +137,12 @@ export default function Home() {
                   <div>{desc[0].title}</div>
                   <Speech
                     text={desc[0].title}
-                    pitch="0.5"
-                    rate="0.5"
-                    volume="0.1"
+                    pitch="1"
+                    rate="1"
+                    volume="1"
                     lang="en-GB"
-                    voice="Daniel"
+                    voice="Google UK English Female"
+                    title="hello"
                   />
                 </>
               ) : null}

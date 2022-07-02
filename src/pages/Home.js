@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Logo, Avatar } from '../components/index';
+import Speech from 'react-speech';
 export default function Home() {
   const user = [
     {
@@ -35,6 +36,9 @@ export default function Home() {
   ];
   const [episod, episodQuery] = useState(null);
   const [desc, setDesc] = useState([]);
+  const playsound = () => {
+    const text = 'hello world';
+  };
 
   const styles = {
     container: {
@@ -113,9 +117,9 @@ export default function Home() {
                       onClick={() => {
                         episodQuery(item.id);
                         const description = podcast.filter((item) => {
-                          return item.id == episod;
+                          return item.id === episod;
                         });
-                        setDesc(description[0]);
+                        setDesc(description);
                       }}
                     >
                       Arrow
@@ -127,7 +131,20 @@ export default function Home() {
             <div style={({ padding: 10 }, styles.container)}>
               {/* Play descriptioin */}
               {episod}
-              {desc && desc.description ? <div>{desc.title}</div> : null}
+              {desc && desc.length > 0 && desc[0].description ? (
+                <>
+                  <div>{desc[0].title}</div>
+                  <Speech
+                    text={desc[0].title}
+                    pitch="0.5"
+                    rate="0.5"
+                    volume="0.1"
+                    lang="en-GB"
+                    voice="Daniel"
+                  />
+                </>
+              ) : null}
+              {/* <button onClick={() => playsound}>Play</button> */}
             </div>
           </div>
         </div>

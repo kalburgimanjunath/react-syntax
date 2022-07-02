@@ -158,11 +158,12 @@ export default function Home() {
                   <div style={{ textstyle }}>
                     <Speech
                       text={desc[0].description}
-                      pitch="1"
+                      pitch="2"
                       rate="1"
-                      volume="1"
+                      volume="100%"
                       lang="en-GB"
-                      voice="Google UK English Male"
+                      voice="Olivia"
+                      // voice="Google UK English Male"
                       displayText="Play"
                       textAsButton={true}
                     />

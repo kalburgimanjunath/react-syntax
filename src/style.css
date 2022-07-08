@@ -11,3 +11,6 @@ p {
   background-color: red;
   cursor: pointer;
 }
+.selected {
+  color: blue;
+}

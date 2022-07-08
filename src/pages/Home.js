@@ -185,7 +185,7 @@ export default function Home() {
             </div>
             
           </div>
-          <Game pairs={pairs} langA={langA} langB={langB}/>
+          {/* <Game pairs={pairs} langA={langA} langB={langB}/> */}
         </div>
       </div>
     </div>

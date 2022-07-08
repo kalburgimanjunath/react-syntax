@@ -1,3 +1,4 @@
 import Logo from './Logo';
 import Avatar from './Avatar';
-export { Logo, Avatar };
+import Game from './Game';
+export { Logo, Avatar, Game };

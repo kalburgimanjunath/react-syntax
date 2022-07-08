@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Logo, Avatar } from '../components/index';
+import { Logo, Avatar, Game } from '../components/index';
 import Speech from 'react-speech';
 
 export default function Home() {
@@ -72,7 +72,17 @@ export default function Home() {
       borderRight: '1px solid #202020',
     },
   };
-  console.log(desc);
+  const pairs = [
+    ['the bank', 'el banco'],
+    ['the restaurant', 'el restaurante'],
+    ['a potato', 'una papa'],
+    ['cow', 'vaca'],
+    ['chair', 'silla'],
+    ["I'm beautiful", 'soy hermoso'],
+  ];
+  const langA = { code: "en", name: "English" },
+  const  langB =  { code: "es", name: "Spanish" },
+  // console.log(desc);
 
   return (
     <div
@@ -100,6 +110,7 @@ export default function Home() {
             marginBottom: 10,
           }}
         >
+          
           {/* Player container */}
           <div>
             <div
@@ -158,12 +169,12 @@ export default function Home() {
                   <div style={{ textstyle }}>
                     <Speech
                       text={desc[0].description}
-                      pitch="2"
+                      pitch="1"
                       rate="1"
                       volume="100%"
-                      lang="en-GB"
-                      voice="Olivia"
-                      // voice="Google UK English Male"
+                      lang="pa-IN"
+                      // voice="Olivia"
+                      voice="Google IN Punjabi Male"
                       displayText="Play"
                       textAsButton={true}
                     />
@@ -172,7 +183,9 @@ export default function Home() {
               ) : null}
               {/* <button onClick={() => playsound}>Play</button> */}
             </div>
+            
           </div>
+          <Game pairs={pairs} langA={langA} langB={langB}/>
         </div>
       </div>
     </div>
